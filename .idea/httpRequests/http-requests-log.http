@@ -1,0 +1,46 @@
+GET http://localhost:8080/parcels/35022cca
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-01-30T180138.400.json
+
+###
+
+GET http://localhost:8080/parcels/35022cca-704c-49bf-bd4d-6f479d36
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-01-30T180131.200.json
+
+###
+
+GET http://localhost:8080/parcels/35022cca-704c-49bf-bd4d-6f479d36
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-01-30T180123.200.json
+
+###
+
+GET http://localhost:8080/parcels/35022cca-704c-49bf-bd4d-6f479d3645d1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-01-30T180118.200.json
+
+###
+
+POST http://localhost:8080/parcels
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-01-30T175842.200.txt
+
+###
+
