@@ -1,5 +1,6 @@
 package eu.deliverymatch.challengebackend.mappers
 
+import eu.deliverymatch.challengebackend.common.Status
 import eu.deliverymatch.challengebackend.dto.BookParcelRequest
 import eu.deliverymatch.challengebackend.dto.BookParcelResponse
 import eu.deliverymatch.challengebackend.model.Parcel
@@ -11,7 +12,8 @@ fun BookParcelRequest.toModel() = Parcel(
     deliveryAddress = deliveryAddress,
     dimension = dimension,
     weight = weight,
-    trackingNumber = UUID.randomUUID()
+    trackingNumber = UUID.randomUUID(),
+    status = Status.BOOKED
 )
 
 fun Parcel.toBookedResponse() = BookParcelResponse(this.trackingNumber)

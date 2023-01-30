@@ -2,6 +2,7 @@ package eu.deliverymatch.challengebackend.model
 
 import eu.deliverymatch.challengebackend.common.Address
 import eu.deliverymatch.challengebackend.common.Dimension
+import eu.deliverymatch.challengebackend.common.Status
 import jakarta.persistence.*
 import java.time.LocalDate
 import java.util.UUID
@@ -19,5 +20,17 @@ class Parcel(
     @Embedded
     val dimension: Dimension,
     val weight: Double,
-    val trackingNumber: UUID
-)
+    val trackingNumber: UUID,
+    val status: Status,
+) {
+    fun toDelivered(): Parcel = Parcel(
+        id = this.id,
+        name = this.name,
+        deliveryDate = this.deliveryDate,
+        deliveryAddress = this.deliveryAddress,
+        dimension = this.dimension,
+        weight = this.weight,
+        trackingNumber = this.trackingNumber,
+        status = Status.DELIVERED
+    )
+}
