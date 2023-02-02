@@ -14,7 +14,7 @@ import java.util.UUID
 @RestController
 class ParcelController(private val parcelService: ParcelService) {
     @PostMapping
-    fun bookParcel(@Valid @RequestBody createParcelRequest: BookParcelRequest): BookParcelResponse {
+    fun bookParcel(@RequestBody @Valid createParcelRequest: BookParcelRequest): BookParcelResponse {
         val bookedParcel = parcelService.bookParcel(createParcelRequest.toModel())
         return bookedParcel.toBookedResponse()
     }

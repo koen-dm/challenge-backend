@@ -1,5 +1,6 @@
 package eu.deliverymatch.challengebackend.services
 
+import eu.deliverymatch.challengebackend.exceptions.NoDeliveryInThePastException
 import eu.deliverymatch.challengebackend.exceptions.ParcelNotFoundException
 import eu.deliverymatch.challengebackend.model.Parcel
 import eu.deliverymatch.challengebackend.repositories.ParcelRepository
@@ -10,6 +11,12 @@ import java.util.*
 @Service
 class ParcelService(private val parcelRepository: ParcelRepository) {
     fun bookParcel(parcel: Parcel): Parcel {
+        val now = LocalDate.now()
+
+        if (parcel.deliveryDate.isEqual(now) || parcel.deliveryDate.isBefore(now)) {
+            throw NoDeliveryInThePastException()
+        }
+
         return parcelRepository.save(parcel)
     }
 
